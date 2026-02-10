@@ -24,8 +24,8 @@ on:
         default: false
 
 env:
-  - my_env: "Vedant"
-  - my_greetings: "hello"
+  my_env: "Vedant"
+  my_greetings: "hello"
  
 jobs:
   Job1:
