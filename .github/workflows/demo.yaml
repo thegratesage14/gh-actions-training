@@ -1,0 +1,30 @@
+name: Demo
+
+on:
+  workflpw_dispatch:
+    inputs:
+      areYouFeelingGood;
+        description: "are You Feeling Good?"
+        type: boolean
+        default: false
+
+jobs:
+  Greetings:
+    runs-on: ubuntu-latest
+    steps:
+    -name : say hello
+    run: echo "We are learning GitHub Actions"
+  
+  job2:
+    runs-on: ubuntu-latest
+    needs: [Greetings]
+    steps:
+      - name: step2
+        run: echo "this is step2 with need of Greetings"
+      - name: step3
+        if : $ {{inputs.areYouFeelingGood}}
+        run: echo "Im feeling good."
+      - name: step4
+        if : $ {{!inputs.areYouFeelingGood}}
+        run: echo "Im not feeling good."
+
