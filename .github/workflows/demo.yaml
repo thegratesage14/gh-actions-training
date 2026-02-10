@@ -3,7 +3,7 @@ name: Demo
 on:
   workflpw_dispatch:
     inputs:
-      areYouFeelingGood;
+      areYouFeelingGood:
         description: "are You Feeling Good?"
         type: boolean
         default: false
