@@ -14,7 +14,7 @@ on:
 # schedule event 
   schedule: 
   - cron: 0 12 * * *  
-  - cron: 0 9 * * 8
+  - cron: 0 9 * * 0
 # manual event 
   workflow_dispatch:
     inputs:
