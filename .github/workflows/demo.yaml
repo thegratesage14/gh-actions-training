@@ -33,17 +33,20 @@ jobs:
     steps:
       - name: Say hello
         run: echo "Hello from Greeting!"
+        if: ${{env.my_env == 'vednat'}}
  
   Job2:
     runs-on: ubuntu-latest
     needs: [Job1]
     steps:
       - name: Step2
+        if: ${{env.my_env == 'vednat'}}
         run: echo "${{ github.actor }} is learning GitHub Actions."
  
       - name: Step3
         if: ${{ inputs.areYouFeelingGood }}
         run: echo "Great!"
+        
  
       - name: Step4
         if: ${{ !inputs.areYouFeelingGood }}
