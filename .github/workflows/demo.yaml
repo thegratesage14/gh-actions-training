@@ -10,11 +10,6 @@ on:
   pull_request:
     branches:
     - main
-  issues:
-    types:
-      - opened
-      - closed
-      - assigned
 
 # schedule event 
   schedule: 
@@ -27,6 +22,10 @@ on:
         description: "Are you feeling good?"
         type: boolean
         default: false
+
+env:
+  my_env: "Vedant"
+  my_greetings: "hello"
  
 jobs:
   Job1:
@@ -49,3 +48,6 @@ jobs:
       - name: Step4
         if: ${{ !inputs.areYouFeelingGood }}
         run: echo "I am not well!"
+
+      - name: step5
+        run: echo $ {{env.my_env}} ${{env.my_greetings}}
