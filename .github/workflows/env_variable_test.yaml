@@ -1,0 +1,31 @@
+name : ENV_Variables
+on:
+  workflow_dispatch:
+    inputs:
+      target_env: 
+        description: "selecting the env_var"
+        type: choice
+        options: [Staging, Testing, Production]
+        default: Test
+        user_name: 
+          description: "Enter your name:"
+          type: true
+          default: "Guest"
+
+job: 
+  greet:
+    runs-on: ubuntu-latest
+    enviorment: ${{input.target_env}}
+
+    steps:
+      - name: show selected env 
+        run: echo "Selected enviroment: ${{github.events.target_env}}"
+
+      - name: Display message
+        run: |
+          echo "Welcome, ${{inputs.user_name}}"
+          echo "${{vars.ENV_GREETINGS}}, ${{input.user_name}}"
+
+        
+        
+        
