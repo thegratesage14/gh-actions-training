@@ -5,7 +5,7 @@ on:
       target_env:
         description: "Choose environment"
         type: choice
-        options: [staging]
+        options: [Staging, Testing, Production]
         default: staging
       user_name: 
           description: 'Enter you name'
