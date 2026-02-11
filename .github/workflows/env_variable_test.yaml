@@ -12,7 +12,7 @@ on:
           type: true
           default: "Guest"
 
-job: 
+jobs: 
   greet:
     runs-on: ubuntu-latest
     enviorment: ${{input.target_env}}
@@ -26,4 +26,7 @@ job:
         run: |
           echo "Welcome, ${{inputs.user_name}}"
           echo "${{vars.ENV_GREETINGS}}, ${{input.user_name}}"
-      
+
+        
+        
+        
