@@ -15,7 +15,7 @@ on:
 jobs: 
   greet:
     runs-on: ubuntu-latest
-    enviornment: ${{input.target_env}}
+    environment: ${{input.target_env}}
 
     steps:
       - name: show selected env 
