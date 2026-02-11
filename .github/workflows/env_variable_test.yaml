@@ -19,13 +19,11 @@ job:
 
     steps:
       - name: show selected env 
-        run: echo "Selected enviroment: ${{github.events.target_env}}"
+        run:
+        echo "Selected enviroment: ${{github.events.target_env}}"
 
       - name: Display message
         run: |
           echo "Welcome, ${{inputs.user_name}}"
           echo "${{vars.ENV_GREETINGS}}, ${{input.user_name}}"
-
-        
-        
-        
+      
